@@ -1,24 +1,24 @@
 {
-  "name": "cheilRep",
+  "name": "CheilExamen",
   "version": "1.0.0",
-  "description": "cheilRep",
+  "description": "CheilExamen",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drew08/cheilRep.git"
+    "url": "git+https://github.com/drew08/CheilExamen.git"
   },
   "keywords": [
-    "cheilRep"
+    "CheilExamen"
   ],
   "author": "andrew rincon",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/drew08/cheilRep/issues"
+    "url": "https://github.com/drew08/CheilExamen/issues"
   },
-  "homepage": "https://github.com/drew08/cheilRep#readme",
+  "homepage": "https://github.com/drew08/CheilExamen#readme",
   "dependencies": {
     "@angular/cli": "^8.3.24",
     "angular": "^1.7.9",

@@ -2,11 +2,11 @@ const router = require('express').Router();
 
 var initHotelA = {
 	_id :  Math.random().toString(36).substring(7),
-	title: "dorado",
+	title: "Caribe By Faranda",
 	isDone: false,
 	precio: "500.000",
 	descuento: "20%",
-	description: "caribe",
+	description: "La arquitectura colonial del hotel Hotel Caribe By Faranda, de 5 estrellas",
 	ciudad: "cartagena",
 	tipo: "hotel",
 	calificacion: "5"
@@ -14,14 +14,14 @@ var initHotelA = {
 
 var initHotelB = {
 	_id :  Math.random().toString(36).substring(7),
-	title: "Bogota",
+	title: "Dann Cartagena",
 	isDone: false,
 	precio: "100.000.000",
 	descuento: "20%",
-	description: "caribe",
-	ciudad: "Bogota",
+	description: "El Laguito de Cartagena de Indias acoge al hotel Hotel Dann Cartagena",
+	ciudad: "cartagena",
 	tipo: "hotel",
-	calificacion: "5"
+	calificacion: "10"
 }
 
 

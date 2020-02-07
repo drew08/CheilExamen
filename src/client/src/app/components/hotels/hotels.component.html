@@ -2,18 +2,15 @@
 	cheil test!
 </h1>
 
+
 <div class="card m-3">
   <div class="card-body">
 	<div class="row">
 		<div class="col-md-6">
 			<form (submit)="searchHotel($event)">
 			  <div class="input-group">
-				  <input type="text" [(ngModel)]="nombre" name="nombre" class="form-control" placeholder="buscar">
-				  <span class="input-group-addon pl-4">
-					  <button type="submit" class="btn btn-primary">
-						  Buscar hotel
-					  </button>
-				  </span>
+				  <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                  <input type="text" class="form-control" name="filterPost" placeholder="Buscar nombre..." [(ngModel)]="filterPost">		
 			  </div>
 			</form>		
 		</div>
@@ -40,7 +37,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let hotel of hotels">
+    <tr *ngFor="let hotel of hotels | filter:filterPost">
       <td>{{ hotel.title }}</td>   
 	   <td>{{ hotel.precio }}</td>
 	   <td>{{ hotel.descuento }}</td>
@@ -117,8 +114,9 @@
 								</div>
 							</div>
 						</div>		
-						 <span class="input-group-addon pl-4">
-						  <button type="submit" class="btn btn-primary" >
+						 <span class="pl-4 d-flex justify-content-center">
+						 	<button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Volver</button>
+						  	<button type="submit" class="btn btn-primary">
 							  Agregar hotel
 							</button>
 						</span>
@@ -126,6 +124,8 @@
 					</div>
                 </form>
             </div>
+           
+            
         </div>
     </div>
 </div> 

@@ -1,14 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+
 import { HotelService } from '../../services/hotel.service'
 import { Hotel } from '../../Hotel';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+
+import {Injectable, Pipe, PipeTransform} from '@angular/core';
 
 @Component({
   selector: 'app-hotels',
   templateUrl: './hotels.component.html',
-  styleUrls: ['./hotels.component.css']
+  styleUrls: ['./hotels.component.css'],
+  providers: [HotelService]
 })
+
+
+
+
+
 export class HotelsComponent implements OnInit {
+
   hotels: Hotel[];
+  public searchString: string;
   title: string;
   precio: string;
   descuento: string;
@@ -16,6 +28,13 @@ export class HotelsComponent implements OnInit {
   ciudad: string;
   tipo: string;
   calificacion: string;  
+  
+  
+  filterPost = '';
+  
+  
+  
+  
 
   constructor(private hotelService: HotelService) { 
 	this.hotelService.getHotel().subscribe(hotels => { 
@@ -78,7 +97,7 @@ export class HotelsComponent implements OnInit {
               if(hotels[i].title == title) {
                 this.hotels.splice(i, 1);   
               }         
-          }  */
+          }  */  
           
         }) 
   }                 
@@ -94,5 +113,8 @@ export class HotelsComponent implements OnInit {
         hotel.isDone = !hotel.isDone;
       })
   }
+  
+
+  
 
 }
