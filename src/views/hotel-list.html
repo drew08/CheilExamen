@@ -1,0 +1,54 @@
+
+<head>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
+ 
+</head>
+
+<div class="container">
+    <hr>
+    <h1>List of hotels</h1>
+    <hr>
+    <div>
+        <div class="row" id="hotels">
+			<div ng-repeat="hotel in myhotels">
+				<span>{{hotel.hotelId}}</span>
+				<span>{{hotel.title}}</span>
+			</div>
+        </div>
+    </div>
+</div>
+
+<div id="edithotelModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit hotel</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form id="editForm" method="POST">
+                    <div class="form-group">
+                        <label for="hotelId">hotelId</label>
+                        <input class="form-control" name="hotelId" id="hotelId">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Title">Title</label>
+                        <input class="form-control" name="title" id="title">
+                    </div>
+
+                    <!--Other fields-->
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Our JS file-->
+<script src="/node_modules/angular/angular.js"></script>
+<script src="lib/bootstrap-4.3.1-dist/bootstrap.min.js"></script>
+<script src="hotel-list.js"></script>

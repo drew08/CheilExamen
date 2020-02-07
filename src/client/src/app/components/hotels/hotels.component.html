@@ -1,0 +1,131 @@
+<h1 class="py-4 text-center">
+	cheil test!
+</h1>
+
+<div class="card m-3">
+  <div class="card-body">
+	<div class="row">
+		<div class="col-md-6">
+			<form (submit)="searchHotel($event)">
+			  <div class="input-group">
+				  <input type="text" [(ngModel)]="nombre" name="nombre" class="form-control" placeholder="buscar">
+				  <span class="input-group-addon pl-4">
+					  <button type="submit" class="btn btn-primary">
+						  Buscar hotel
+					  </button>
+				  </span>
+			  </div>
+			</form>		
+		</div>
+		<div class="col-md-6">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addHotelModal">
+				Agregar hotel
+			</button>		
+		</div> 		 
+	</div>  
+  </div>  
+</div>
+
+<table class="table text-center table-hover">
+  <thead>
+    <tr>
+      <th>nombre</th>     
+	  <th>precio</th>
+	  <th>descuento</th>
+	  <th>description</th>
+	  <th>ciudad</th>
+	  <th>tipo</th>
+	  <th>calificacion</th>
+	  <th>accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hotel of hotels">
+      <td>{{ hotel.title }}</td>   
+	   <td>{{ hotel.precio }}</td>
+	   <td>{{ hotel.descuento }}</td>
+	   <td>{{ hotel.description }}</td>
+	   <td>{{ hotel.ciudad }}</td>
+	   <td>{{ hotel.tipo }}</td>
+	   <td>{{ hotel.calificacion }}</td>
+	   <td>
+        <button class="btn btn-danger" (click)="deleteHotel(hotel._id)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<div id="addHotelModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar hotel</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form id="editForm" (submit)="addHotel($event)">
+					<div class="input-group">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="font-weight-bold" for="title">nombre</label>
+									<input [(ngModel)]="title" class="form-control" name="title" id="title">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="font-weight-bold" for="precio">precio</label>
+									<input [(ngModel)]="precio" class="form-control" name="precio" id="precio">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="font-weight-bold" for="descuento">descuento</label>
+									<input [(ngModel)]="descuento" class="form-control" name="descuento" id="descuento">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="font-weight-bold" for="description">description</label>
+									<input [(ngModel)]="description" class="form-control" name="description" id="description">
+								</div>
+							</div>
+							<div class="col-md-6">	
+								<div class="form-group">
+									<label class="font-weight-bold" for="ciudad">ciudad</label>
+									<input [(ngModel)]="ciudad" class="form-control" name="ciudad" id="ciudad">
+								</div>
+							</div>	
+							<div class="col-md-6">	
+								<div class="form-group">
+									<label class="font-weight-bold" for="tipo">tipo</label>
+									<input [(ngModel)]="tipo" class="form-control" name="tipo" id="tipo">
+								</div>
+							</div>	
+							<div class="col-md-6">	
+								<div class="form-group">
+									<label class="font-weight-bold" for="calificacion">calificacion</label>
+									<input [(ngModel)]="calificacion" class="form-control" name="calificacion" id="calificacion">
+								</div>
+							</div>
+						</div>		
+						 <span class="input-group-addon pl-4">
+						  <button type="submit" class="btn btn-primary" >
+							  Agregar hotel
+							</button>
+						</span>
+					
+					</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 

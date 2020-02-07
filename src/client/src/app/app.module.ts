@@ -1,0 +1,26 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HotelsComponent } from './components/hotels/hotels.component';
+import {HotelService} from './services/hotel.service'
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HotelsComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+	HttpClientModule,
+	FormsModule
+  ],
+  providers: [HotelService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
